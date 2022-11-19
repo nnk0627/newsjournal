@@ -41,8 +41,9 @@ class PageController extends Controller
 
     public function contact()
     {
+        $posts = Post::orderby('id', 'asc')->paginate(6);
         $categories=Category::all();
-        return view('frontend.contact',compact('categories'));
+        return view('frontend.contact',compact('posts','categories'));
     }
 
     public function blog()

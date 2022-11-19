@@ -9741,7 +9741,8 @@ h6,
                                         <span class="px-1">/</span>
                                         <span>{{$post->date}}</span>
                                     </div>
-                                    <a class="h6" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                                    <a class="h6 " href="{{ url("post/$post->id") }}">{{$post->title}}
+                                    </a>
                                 </div>
                             </div>                     
                         </div>

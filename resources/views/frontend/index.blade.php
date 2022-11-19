@@ -18,7 +18,7 @@
                             <span class="px-1 text-white">/</span>
                             <a class="text-white" href="">{{$post->date}}</a>
                         </div>
-                        <a class="h4 m-0 text-white" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                        <a class="h m-0 text-white" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
                     </div>
                 </div>
                 @endforeach
@@ -138,8 +138,9 @@
                                 <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
                             </div>
                         </div>
-                        <div class="col-lg-6">
                         @foreach ($posts as $post)
+                        <div class="col-lg-6">
+                        
                             <div class="position-relative mb-3">
                                 <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 200px;object-fit: cover;">
                                 <div class="overlay position-relative bg-light">
@@ -148,11 +149,11 @@
                                         <span class="px-1">/</span>
                                         <span>{{$post->date}}</span>
                                     </div>
-                                    <a class="h4" href="{{ url("post/$post->id") }}" style="height: 130px">{{$post->title}}</a>
+                                    <a class="h6" href="{{ url("post/$post->id") }}" style="height: 60px">{{$post->title}}</a>
                                     <!-- <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p> -->
                                 </div>
                             </div>
-                        @endforeach
+                        
                             <!-- @foreach ($posts as $post)
                             
                             <div class="d-flex mb-3">
@@ -169,7 +170,8 @@
                             @endforeach -->
     
                         </div>
-                        <div class="col-lg-6">
+                        @endforeach
+                        <!-- <div class="col-lg-6">
                         @foreach ($posts as $post)
                             <div class="position-relative mb-3">
                                 <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 200px;object-fit: cover;">
@@ -179,11 +181,10 @@
                                         <span class="px-1">/</span>
                                         <span>{{$post->date}}</span>
                                     </div>
-                                    <a class="h4" href="{{ url("post/$post->id") }}" style="height: 130px">{{$post->title}}</a>
-                                    <!-- <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p> -->
+                                    <a class="h6" href="{{ url("post/$post->id") }}" style="height: 60px">{{$post->title}}</a>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach -->
                             <!-- @foreach ($posts as $post)
                             
                             <div class="d-flex mb-3">
@@ -199,7 +200,7 @@
                             </div>
                             @endforeach -->
     
-                        </div>
+                        <!-- </div> -->
                     </div>
                  
                     <div class="row">
@@ -209,37 +210,7 @@
                                 <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                        @foreach ($posts as $post)
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 200px;object-fit: cover;">
-                                <div class="overlay position-relative bg-light">
-                                    <div class="mb-2" style="font-size: 14px;">
-                                        <a href="">{{$post->category->title}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{$post->date}}</span>
-                                    </div>
-                                    <a class="h4" href="{{ url("post/$post->id") }}" style="height: 130px">{{$post->title}}</a>
-                                    <!-- <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p> -->
-                                </div>
-                            </div>
-                        @endforeach
                         
-                           <!-- @foreach ($posts as $post)
-                            
-                            <div class="d-flex mb-3">
-                                <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{$post->category->title}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{$post->date}}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
-                                </div>
-                            </div>
-                            @endforeach  -->
-                        </div>
                         <div class="col-lg-6">
                         @foreach ($posts as $post)
                             <div class="position-relative mb-3">
@@ -250,12 +221,12 @@
                                         <span class="px-1">/</span>
                                         <span>{{$post->date}}</span>
                                     </div>
-                                    <a class="h4" href="{{ url("post/$post->id") }}" style="height: 130px">{{$post->title}}</a>
+                                    <a class="h6" href="{{ url("post/$post->id") }}" style="height: 60px">{{$post->title}}</a>
                                      <!-- <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>  -->
                                 </div>
                             </div>
-                        @endforeach
-                            <!-- @foreach ($posts as $post)
+                            @endforeach
+                              @foreach ($posts as $post)
                             
                             <div class="d-flex mb-3">
                                 <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
@@ -268,8 +239,40 @@
                                     <a class="h6 m-0" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
                                 </div>
                             </div>
-                            @endforeach  -->
+                            @endforeach
                         </div>
+                        <div class="col-lg-6">
+                        @foreach ($posts as $post)
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 200px;object-fit: cover;">
+                                <div class="overlay position-relative bg-light">
+                                    <div class="mb-2" style="font-size: 14px;">
+                                        <a href="">{{$post->category->title}}</a>
+                                        <span class="px-1">/</span>
+                                        <span>{{$post->date}}</span>
+                                    </div>
+                                    <a class="h6" href="{{ url("post/$post->id") }}" style="height: 60px">{{$post->title}}</a>
+                                     <!-- <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>  -->
+                                </div>
+                            </div>
+                            @endforeach
+                            @foreach ($posts as $post)
+                            
+                            <div class="d-flex mb-3">
+                                
+                                <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">{{$post->category->title}}</a>
+                                        <span class="px-1">/</span>
+                                        <span>{{$post->date}}</span>
+                                    </div>
+                                    <a class="h6 m-0" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                                </div>
+                            </div>
+                    @endforeach
+                        </div>
+                        
                     </div>
                 </div>
                 
@@ -346,6 +349,7 @@
                         </div>
                     </div>
                     <!-- Tags End -->
+                    
                 </div>
             </div>
         </div>

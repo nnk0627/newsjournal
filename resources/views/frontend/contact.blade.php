@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <h1 class="home-title text-danger">Contact Us</h1>
+    <h1 class="home-title text-danger text-center">Contact Us</h1>
     <div class="row mb-4">
         <div class="col-md-6 offset-3">
             <hr>

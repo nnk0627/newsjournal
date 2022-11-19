@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-right d-none d-md-block">
+            <div class="col-md-4 text-right d-none d-md-block" style="font-size: 14px;">
             <span id="date-time"> </span>
             <script>
             var dt = new Date();
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="{{url('/')}}" class="nav-item nav-link active">Home</a>
-                    <a href="{{url('blog')}} " class="nav-item nav-link"> News</a>
+                    <a href="{{url('blog')}} " class="nav-item nav-link mx-2"> News</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                         <div class="dropdown-menu rounded-0 m-0">

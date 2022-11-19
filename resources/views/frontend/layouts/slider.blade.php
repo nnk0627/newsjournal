@@ -35,9 +35,9 @@
                         <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
                     </div>
                     @foreach($categories as $category)
-                    <div class="position-relative overflow-hidden mb-3" style="height: 60px;">
+                    <div class="position-relative overflow-hidden mb-3" style="height: 60px; ">
                        
-                        <a href="{{route('family',$category->id)}}" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                        <a href="{{route('family',$category->id)}}" class="overlay align-items-center justify-content-center h4 m-0  text-decoration-none">
                         {{$category->title}}
                         </a>
                        
