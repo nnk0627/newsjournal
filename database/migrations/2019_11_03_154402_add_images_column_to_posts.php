@@ -15,7 +15,7 @@ class AddImagesColumnToPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->string('images');
-            $table->string('slideimages');
+            $table->string('slideimages')->default('slideimages')->nullable();
         });
        
     }

@@ -24,8 +24,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Category</th>
-                        <th>Images</th>
-                        <th>SlideImages</th>
+                       
                         <th>Name</th>
                         <th>date</th>
                         <th>SlideShow</th>
@@ -39,8 +38,8 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->category->title }}</td>
-                        <td><img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px;"></td>
-                        <td><img src="{{ asset('images/' . $post->slideimages) }}" style="width: 100px;"></td>
+                        <!-- <td><img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px;"></td>
+                        <td><img src="{{ asset('images/' . $post->slideimages) }}" style="width: 100px;"></td> -->
 
                         <td>{{ $post->title }}</td>
                         <td> {{ $post->date }}</td>

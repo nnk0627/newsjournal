@@ -19,6 +19,12 @@ class PageController extends Controller
         $categories=Category::all();
 
         // $posts = Post::where('category_id','=',$id)->orderby('id', 'asc')->paginate(6);
+        $politicsposts = Post::where('category_id','1')->orderBy('id','desc')->paginate(6);
+        $businessposts = Post::where('category_id','2')->orderBy('id','desc')->paginate(6);
+        $articlesposts = Post::where('category_id','3')->orderBy('id','desc')->paginate(6);
+        $lifestyleposts = Post::where('category_id','4')->orderBy('id','desc')->paginate(6);
+        $weatherposts = Post::where('category_id','5')->orderBy('id','desc')->paginate(6);
+
         $posts = Post::orderby('id', 'asc')->orderby('id', 'asc')->paginate(6);
         $category=Category::find($id);
         
@@ -37,7 +43,8 @@ class PageController extends Controller
         $latestposts= Post::orderBy('created_at', 'desc')->paginate(6); 
 
 
-        return view('frontend.index', compact('posts','categories','category','sites','latestposts','slider'));
+        return view('frontend.index', compact('posts','categories','category','sites','latestposts','slider',
+        'politicsposts','businessposts','articlesposts','lifestyleposts','weatherposts'));
 
     }
 
@@ -62,10 +69,10 @@ class PageController extends Controller
     {
         $posts = Post::orderby('id', 'asc')->paginate(6);
         $categories=Category::all();
-        $posts = Post::where('slideshow',1)->get();
+        $slider = Post::where('slideshow',1)->get();
         // $slider = Slider::where('status',0)->get();
         $sites = Site::all();
-        return view('frontend.contact',compact('posts','categories','sites'));
+        return view('frontend.contact',compact('posts','categories','sites','slider'));
     }
 
     public function blog()

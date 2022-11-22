@@ -11,7 +11,7 @@
             
             <div class="col-lg-8">
                 @php $i=1; @endphp
-                @foreach($slider as $post)
+                @foreach($posts as $post)
                     <div class="position-relative {{ $i == '1' ? 'active' : '' }} overflow-hidden mb-1" style="height: 300px; ">
                     @php $i++; @endphp
                         <img class="img-fluid w-100 h-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="object-fit: cover;">

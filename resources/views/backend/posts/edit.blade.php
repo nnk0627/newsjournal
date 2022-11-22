@@ -36,7 +36,7 @@
                 <div class="form-group mb-4">
                     <label>Description</label>
                     <textarea class="form-control" rows="6" name="content" id="summernote">
-                    {{ $post->content }}
+                    {!! $post->content !!}
                     </textarea>
                 </div>
                 <div class="form-group">

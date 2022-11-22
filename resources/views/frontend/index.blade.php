@@ -31,10 +31,10 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Business</h3>
+                        <h3 class="m-0">Politics</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
-                    @foreach($posts as $post)
+                    @foreach($politicsposts as $post)
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
                             <div class="overlay position-relative bg-light">
@@ -51,10 +51,10 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Technology</h3>
+                        <h3 class="m-0">Business</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
-                    @foreach($posts as $post)
+                    @foreach($businessposts as $post)
                         <div class="position-relative" >
                             <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
                             <div class="overlay position-relative bg-light">
@@ -82,10 +82,10 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Entertainment</h3>
+                        <h3 class="m-0">Articles</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
-                    @foreach($posts as $post)
+                    @foreach($articlesposts as $post)
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
                             <div class="overlay position-relative bg-light">
@@ -102,10 +102,10 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Sports</h3>
+                        <h3 class="m-0">LifeStyle</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
-                        @foreach($posts as $post)
+                        @foreach($lifestyleposts as $post)
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
                             <div class="overlay position-relative bg-light">
@@ -120,6 +120,33 @@
                         @endforeach  
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Weather</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                    @foreach($weatherposts as $post)
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">{{$post->category->title}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{$post->date}}</span>
+                                </div>
+                                <a class="h6 m-0" href="" style="height: 60px;">{{$post->title}}</a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -229,11 +256,11 @@
                         </div>
                        
                         @endforeach
-                        <div class="row">
+                        <!-- <div class="row">
 
                             @foreach ($posts as $post)
-                            <div class="col-lg-6">                               
-                                <div class="d-flex mb-3 pl-3">
+                            <div class="col-lg-12">                               
+                                <div class="d-flex mb-3">
                                     <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
                                     <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
                                         <div class="mb-1" style="font-size: 13px;">
@@ -246,7 +273,7 @@
                                 </div>
                             </div>
                             @endforeach
-                        </div>
+                        </div> -->
                         <!-- <div class="col-lg-6">
                         @foreach ($posts as $post)
                             <div class="position-relative mb-3">
