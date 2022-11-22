@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section ('title', 'tours')
+@section ('title', 'news')
 
 @section('content')
 
@@ -10,10 +10,10 @@
         <div class="row">
             
             <div class="col-lg-8">
-                    <!-- News Detail Start -->
-                    <!-- <div class="owl-carousel owl-carousel-2 carousel-item-4 position-relative"> -->
-                @foreach($posts as $post)
-                    <div class="position-relative overflow-hidden mb-1" style="height: 300px; ">
+                @php $i=1; @endphp
+                @foreach($slider as $post)
+                    <div class="position-relative {{ $i == '1' ? 'active' : '' }} overflow-hidden mb-1" style="height: 300px; ">
+                    @php $i++; @endphp
                         <img class="img-fluid w-100 h-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="object-fit: cover;">
                         <div class="overlay">
                             <div class="mb-1" style="font-size: 13px;">

@@ -1,127 +1,82 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use  Illuminate\Support\Facades\File;
 use App\Slider;
 
 class SliderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // index function
-    public function index()
-    {
-        $slider = Slider::orderby('id', 'desc')->paginate(3);
-        return view('slider.index', compact('slider'));
+    public function index(){
+        $slider = Slider::all();
+        return view('backend.slider.index', compact('slider'));
+        
     }
 
-    // create function
-    public function create()
-    {
-        return  view ('slider.create');
+    public function create(){
+        return view('backend.slider.create');
+        
     }
 
-    // store function
-    public function store(Request $request)
-    {
-        $this->validate($request, array(
-            'title'=>'required|max:225',
-            'photo'=>'required|image',
-          ));
-          $slider = new Slider;
-          $slider->title = $request->input('title');
-          if ($request->hasFile('photo')) {
-            $photo = $request->file('photo');
-            $filename = 'slide' . '-' . time() . '.' . $photo->getClientOriginalExtension();
-            $location = public_path('images/');
-            $request->file('photo')->move($location, $filename);
+    public function store(Request $request){
+        $slider = new Slider;
+        $slider->heading = $request->input('heading');
+        $slider->description = $request->input('description');
+        $slider->link = $request->input('link');
+        $slider->link_name = $request->input('link_name');
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('images/', $filename);
+            $slider->image = $filename;
+        }
+        $slider->status = $request->input('status')==true ? '1':'0';
+        $slider->save();
+        return redirect('admin/slider')->with('status','Slider Added Successfully');
 
-            $slider->photo = $filename;
-          }
-          $slider->save();
-          return redirect()->route('slider.index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-      $slider = Slider::findOrFail($id);
-      return view('slider.edit', compact('slider'));
+        $slider = Slider::find($id);
+        return view('backend.slider.edit', compact('slider'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-      $slider = Slider::find($id);
-       $this->validate($request, array(
-         'title'=>'required|max:225',
-         'photo'=>'required|image'
-      ));
 
-       $slider = Slider::where('id',$id)->first();
+        $slider = Slider::find($id);
+        $slider->heading = $request->input('heading');
+        $slider->description = $request->input('description');
+        $slider->link = $request->input('link');
+        $slider->link_name = $request->input('link_name');
+        if($request->hasFile('image')){
 
-       $slider->title = $request->input('title');
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalName();
+            $path = public_path('images/');
+            $file->move($path, $filename);
 
-       if ($request->hasFile('photo')) {
-        $photo = $request->file('photo');
-        $filename = 'slider' . '-' . time() . '.' . $photo->getClientOriginalExtension();
-        $location = public_path('images/');
-        $request->file('photo')->move($location, $filename);
+            $previmg = $path . $slider->image;
+            if(file_exists($previmg)){
+                unlink($previmg);
+            }
 
-        $oldFilename = $slider->photo;
-        $slider->photo= $filename;
-        if(!empty($slider->photo)){
-          Storage::delete($oldFilename);
+            $slider->image = $filename;
         }
-      }
-
-      $slider->save();
-
-      return redirect()->route('slider.index',
-          $slider->id)->with('success',
-          'Slider, '. $slider->title.' updated');
+        $slider->status = $request->input('status')==true ? '1':'0';
+        $slider->save();
+        
+       return redirect('admin/slider')->with('slider',$slider)->with('status', 'Update Successfully!');
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-      $slider = Slider::findOrFail($id);
-      Storage::delete($slider->photo);
-      $slider->delete();
-
-      return redirect()->route('slider.index')
-              ->with('success',
-               'Slider successfully deleted');
+        Slider::findOrFail($id)->delete();
+        return redirect('admin/slider')->with('status', 'Deleted Successfully!'); 
     }
 }

@@ -38,11 +38,21 @@ class PostController extends Controller
         if($request->hasfile('images')){
             $images = $request->file('images');
             $imgName = time() . '_' . $images->getClientOriginalName();
-            $path = public_path('images/blogimg');
+            $path = public_path('images/blogimg/');
             $images->move($path, $imgName);
             $posts->images = $imgName;
         }
 
+        if($request->hasfile('slideimages')){
+            $slideimages = $request->file('slideimages');
+            $imgName = time() . '_' . $slideimages->getClientOriginalName();
+            $path = public_path('images/');
+            $slideimages->move($path, $imgName);
+        }
+
+       $posts->slideshow = $request->input('slideshow')==true ? '1':'0';
+
+       $posts->status = $request->input('status')==true ? '1':'0';
        $posts->save();
   
        return redirect('admin/post')->with('status', 'Created Successfully!');
@@ -86,6 +96,22 @@ class PostController extends Controller
             $posts->images = $imgName;
         }
 
+        if($request->hasfile('slideimages')){
+            $slideimages = $request->file('slideimages');
+            $imgName = time() . '_' . $slideimages->getClientOriginalName();
+            $path = public_path('images/');
+            $slideimages->move($path, $imgName);
+
+            $previmg = $path . $posts->images;
+            if(file_exists($previmg)){
+                unlink($previmg);
+            }
+
+            $posts->slideimages = $imgName;
+        }
+
+        $posts->slideshow = $request->input('slideshow')==true ? '1':'0';
+        $posts->status = $request->input('status')==true ? '1':'0';
         $posts->save();
         
        return redirect('admin/post')->with('posts',$posts)->with('status', 'Update Successfully!');

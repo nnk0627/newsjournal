@@ -8,8 +8,6 @@
                     @foreach ($posts as $post)                       
                     <div class="text-truncate"><a class="text-secondary" href="">{{ $post->title }}</a></div>
                     @endforeach    
-
-                        <!-- <div class="text-truncate"><a class="text-secondary" href="">Gubergren elitr amet eirmod et lorem diam elitr, ut est erat Gubergren elitr amet eirmod et lorem diam elitr, ut est erat</a></div> -->
                     </div>
                 </div>
             </div>
@@ -22,14 +20,19 @@
             </div>
         </div>
         <div class="row align-items-center py-2 px-lg-5">
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                 <a href="" class="navbar-brand d-none d-lg-block">
-                    <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
+                @foreach ($sites as $site)
+                  
+                <div class="row ">
+                    <img style="width: 140px;height:60px; margin-left: 15px;" class="rounded" src="{{ asset('images/' . $site->image) }}" alt="">
+                    <h2 class="m-0 display-5 text-uppercase px-2 "><span class="text-primary ">{{ $site->title }}</span></h2>
+                </div>                                       
+                    
+                @endforeach 
                 </a>
             </div>
-            <!-- <div class="col-lg-8 text-center text-lg-right">
-                <img class="img-fluid" src="img/ads-700x70.jpg" alt="">
-            </div> -->
+           
         </div>
     </div>
     <!-- Topbar End -->
@@ -60,13 +63,7 @@
                     <a href="{{url('contact-us')}}" class="nav-item nav-link">Contact</a>
 
                 </div>
-                <!-- <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control" placeholder="Keyword">
-                    <div class="input-group-append">
-                        <button class="input-group-text text-secondary"><i
-                                class="fa fa-search"></i></button>
-                    </div>
-                </div> -->
+               
             </div>
         </nav>
     </div>

@@ -9697,14 +9697,14 @@ h6,
         
         <main class="py-4">
             
-            <div class="container-fluid py-3">
+            <!-- <div class="container-fluid py-3">
                     <div class="container">
                         <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
                             <h3 class="m-0">One News Category</h3>
                             <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
                         </div>
                         
-            </div>
+            </div> -->
                
             <!-- Breadcrumb Start -->
     <div class="container-fluid">
@@ -9741,7 +9741,7 @@ h6,
                                         <span class="px-1">/</span>
                                         <span>{{$post->date}}</span>
                                     </div>
-                                    <a class="h6 " href="{{ url("post/$post->id") }}">{{$post->title}}
+                                    <a class="h6" style="height: 60px;" href="{{ url("post/$post->id") }}">{{$post->title}}
                                     </a>
                                 </div>
                             </div>                     
@@ -9749,7 +9749,7 @@ h6,
                         @endforeach
                     </div>
 
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-12">
                             <nav aria-label="Page navigation">
                               <ul class="pagination justify-content-center">

@@ -29,20 +29,35 @@
                 </div>
                 <div class="form-group mb-4">
                     <label>Date</label>
-                    <input type="date" class="form-control" placeholder="" name="date">
+                    <input type="date" class="form-control" placeholder="" name="date" value="{{ $post->date }}">
+                    
                 </div>
                 
                 <div class="form-group mb-4">
                     <label>Description</label>
-                    <textarea class="form-control" rows="6" name="content">
+                    <textarea class="form-control" rows="6" name="content" id="summernote">
                     {{ $post->content }}
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label>Upload Image</label>
+                    <label>Upload News Image</label>
                     <input type="file" class="form-control-file" value="{{ asset('images/blogimg/' . $post->images) }}" name="images">
                     {{ $post->images }}
                 </div>
+                <div class="form-group">
+                    <label>Upload Slider Image</label>
+                    <input type="file" class="form-control-file" value="{{ asset('images/' . $post->slideimages) }}" name="slideimages">
+                    {{ $post->slideimages }}
+                </div>
+                <div class="form-group mb-4">
+                    <label>SlideShow</label>
+                    <input type="checkbox" name="slideshow" {{$post->status == '1' ? 'checked' : '' }}>0=hidden, 1=visible
+                    </div>
+                <div>
+                <div class="form-group mb-4">
+                    <label>PostShow</label>
+                    <input type="checkbox" name="status" {{$post->status == '1' ? 'checked' : '' }}>0=hidden, 1=visible
+                    </div>
                 <div>
                     <button class="btn btn-primary mt-3" type="submit">Update</button>
                     <a href="{{ url('/admin/post') }}" class="btn btn-secondary mt-3">Back</a>

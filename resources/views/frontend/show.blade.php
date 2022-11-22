@@ -9700,9 +9700,9 @@ h6,
     <div class="container-fluid">
         <div class="container">
             <nav class="breadcrumb bg-transparent m-0 p-0">
-                <a class="breadcrumb-item" href="#">Home</a>
-                <a class="breadcrumb-item" href="#">Category</a>
-                <a class="breadcrumb-item" href="#">{{ $post->category->title }}</a>
+                <a class="breadcrumb-item" href="{{url('/')}}">Home</a>
+                <a class="breadcrumb-item" href="{{url('blog')}}">Category</a>
+                <a class="breadcrumb-item active">{{ $post->category->title }}</a>
                 <!-- <span class="breadcrumb-item active">{{ $post->title }}</span> -->
             </nav>
         </div>
@@ -9727,7 +9727,8 @@ h6,
                             <div>
                                 <h3 class="mb-3">{{ $post->title }}</h3>
                                 <p>
-                                {!! $post->content !!}</p>
+                                {!! $post->content !!}
+                              </p>
                             </div>
                         </div>
                     </div>

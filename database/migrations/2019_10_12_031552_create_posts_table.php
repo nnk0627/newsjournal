@@ -20,6 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('date');
+            $table->tinyInteger('slideshow')->default('0')->nullable();
+            $table->tinyInteger('status')->default('0')->nullable();
             $table->timestamps();
         });
     }

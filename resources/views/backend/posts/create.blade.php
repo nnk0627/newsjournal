@@ -7,6 +7,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+        
             <h3 class="heading mb-5">Create New Post</h3>
             @include('alerts')
             <form method="post" action="{{ url('admin/post') }}" enctype="multipart/form-data">
@@ -32,11 +33,23 @@
                 
                 <div class="form-group mb-4">
                     <label>Description</label>
-                    <textarea class="form-control" rows="6" name="content" id="summernote"></textarea>
+                    <textarea class="form-control" rows="6" name="content" id="summernote" ></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Upload Image</label>
+                    <label>Upload News Image</label>
                     <input type="file" class="form-control-file" name="images" multiple>
+                </div>
+                <div class="form-group">
+                    <label>Upload Slider Image</label>
+                    <input type="file" class="form-control-file" name="slideimages" multiple>
+                </div>
+                <div class="form-group mb-4">
+                    <label>SlideShow</label>
+                    <input type="checkbox" name="slideshow">0=hidden, 1=visible
+                </div>
+                <div class="form-group mb-4">
+                    <label>PostShow</label>
+                    <input type="checkbox" name="status" checked>0=hidden, 1=visible
                 </div>
                 <button class="btn btn-primary mt-3" type="submit">Create</button>
                 <a href="{{ url('admin/post') }}" class="btn btn-secondary mt-3">Back</a>

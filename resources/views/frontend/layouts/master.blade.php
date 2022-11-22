@@ -92,6 +92,9 @@ body {
   background-color: #f2f2f2;
 }
 
+.overlay .span{
+  color: #e9ecef;
+}
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }

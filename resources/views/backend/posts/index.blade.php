@@ -25,8 +25,11 @@
                         <th>ID</th>
                         <th>Category</th>
                         <th>Images</th>
+                        <th>SlideImages</th>
                         <th>Name</th>
                         <th>date</th>
+                        <th>SlideShow</th>
+                        <th>PostShow</th>
                         <th>Created at</th>
                         <th>Actions</th>
                     </tr>
@@ -37,15 +40,31 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->category->title }}</td>
                         <td><img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px;"></td>
+                        <td><img src="{{ asset('images/' . $post->slideimages) }}" style="width: 100px;"></td>
+
                         <td>{{ $post->title }}</td>
                         <td> {{ $post->date }}</td>
+                        <td>
+                             @if ($post->slideshow == '1')
+                                visible
+                            @else
+                                hidden
+                            @endif
+                        </td>
+                        <td>
+                             @if ($post->status == '1')
+                                visible
+                            @else
+                                hidden
+                            @endif
+                        </td>
                         <td>{{ $post->created_at->format('d - m - Y') }}
                         <td>
                             <a href="{{ url("admin/post/$post->id/edit") }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-edit"></i> Edit
                             </a>
                             <a href="{{ url("admin/post/$post->id/delete") }}" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash-alt"></i> Delete
+                                <i class="fas fa-trash-alt"></i> Delete
                             </a>
                         </td>
                     </tr>

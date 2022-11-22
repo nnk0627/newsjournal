@@ -15,7 +15,9 @@ class AddImagesColumnToPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->string('images');
+            $table->string('slideimages');
         });
+       
     }
 
     /**
@@ -27,6 +29,9 @@ class AddImagesColumnToPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropColumn('images');
+            $table->dropColumn('slideimages');
+           
         });
+       
     }
 }
