@@ -25,6 +25,8 @@ Route::get('about-us', 'Frontend\PageController@about');
 Route::get('contact-us', 'Frontend\PageController@contact');
 Route::get('blog', 'Frontend\PageController@blog');
 Route::get('family/{id}', 'Frontend\PageController@family')->name('family');
+Route::get('video', 'Frontend\PageController@video');
+Route::get('search', 'Frontend\PageController@search')->name('search');
 
 // Route::put('index/family/{id}', 'Frontend\PageController@family');
 
@@ -83,5 +85,13 @@ Route::get('user/{id}/show', 'UserController@show');
 // Profile Route
 
 Route::get('user/profile', 'UserController@profile');
+
+//video
+Route::get('video', 'VideoController@index');
+Route::get('video/create', 'VideoController@create');
+Route::post('video', 'VideoController@store');
+Route::get('video/{id}/edit', 'VideoController@edit');
+Route::post('video/{id}/edit', 'VideoController@update');
+Route::get('video/{id}/delete', 'VideoController@destroy');
 
 });

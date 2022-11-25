@@ -11,24 +11,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-right d-none d-md-block" style="font-size: 14px;">
-            <span id="date-time"> </span>
-            <script>
-            var dt = new Date();
-            document.getElementById('date-time').innerHTML=dt;
-            </script>
-            </div>
+            <!-- <div class="col-md-4 text-right d-none d-md-block" style="font-size: 14px;">
+                <span id="date-time"> </span>
+                <script>
+                var dt = new Date();
+                document.getElementById('date-time').innerHTML=dt;
+                </script>
+            </div> -->
         </div>
         <div class="row align-items-center py-2 px-lg-5">
             <div class="col-lg-8">
                 <a href="" class="navbar-brand d-none d-lg-block">
-                @foreach ($sites as $site)
-                  
-                <div class="row ">
+                @foreach ($sites as $site)            
+                <div class="row">
                     <img style="width: 140px;height:60px; margin-left: 15px;" class="rounded" src="{{ asset('images/' . $site->image) }}" alt="">
                     <h2 class="m-0 display-5 text-uppercase px-2 "><span class="text-primary ">{{ $site->title }}</span></h2>
-                </div>                                       
-                    
+                </div>                                                         
                 @endforeach 
                 </a>
             </div>
@@ -54,17 +52,29 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                        @foreach($categories as $category)
-                            <a class="dropdown-item" href="{{route('family',$category->id)}}">
-                            {{$category->title}}</a>   
-                        @endforeach
+                            @foreach($categories as $category)
+                                <a class="dropdown-item" href="{{route('family',$category->id)}}">
+                                {{$category->title}}</a>   
+                            @endforeach
                         </div>
                     </div>
                     <a href="{{url('contact-us')}}" class="nav-item nav-link">Contact</a>
-
+                    <a href="{{url('video')}}" class="nav-item nav-link">Videos</a>
+                    
+                    <!-- SEARCH FORM -->
+                    <form action="{{ url('search') }}" class="form-inline ml-3 " method="GET">
+                        <div class="input-group input-group-sm mt-2">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                             aria-label="Search" name="Search" value="">
+                            <div class="input-group-append">
+                                <button class="btn btn-navbar" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-               
-            </div>
+            </div
         </nav>
     </div>
     <!-- Navbar End -->

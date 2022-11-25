@@ -107,10 +107,10 @@
 <!-- Summernote -->
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
-    $('#summernote').summernote({
+    $('#summernote,#summernote1').summernote({
         placeholder: '',
         tabsize: 2,
-        height: 200
+        height: 500
       });
 </script>
 
@@ -124,7 +124,32 @@
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 <script src="{{ asset('dist/js/editor.js') }}"></script>
 
+<script class="https:////cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>
+<script class="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script class="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>
+<script class="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.js"></script>
+<script>
+   
+   $('#example').dataTable( {
+   
+    "pageLength": 10
+    
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+
+<script>
+    $(document).ready(function() {
+    $('.categories').select2({
+                placeholder: "Select",
+                allowClear: true
+    });
+});
+</script>
 
 </body>
 </html>

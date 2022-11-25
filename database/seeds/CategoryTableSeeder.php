@@ -16,6 +16,7 @@ class CategoryTableSeeder extends Seeder
             'Politics',
             'Business',
             'Articles',
+            'Interviews',
             'Lifestyle',
             'Weather'
 

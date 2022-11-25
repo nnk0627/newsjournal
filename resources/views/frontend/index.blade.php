@@ -14,7 +14,7 @@
                     <img class="img-fluid w-100 h-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="object-fit: cover;">
                     <div class="overlay">
                         <div class="mb-1" style="font-size: 13px;">
-                            <a style="font-size: 14px;" href="">{{$post->category->title}}</a>
+                            <a style="font-size: 16px;color:ghostwhite" href="">{{$post->category->title}}</a>
                             <span class="px-1 text-white">/</span>
                             <a class="text-white" href="">{{$post->date}}</a>
                         </div>
@@ -46,7 +46,7 @@
                                 <a class="h6 m-0" href="" style="height: 60px;">{{$post->title}}</a>
                             </div>
                         </div>
-                        @endforeach
+                    @endforeach
                     </div>
                 </div>
                 <div class="col-lg-6 py-3">
@@ -146,7 +146,26 @@
                         @endforeach
                     </div>
                 </div>
-                
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Interviews</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        @foreach($interviewsposts as $post)
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">{{$post->category->title}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{$post->date}}</span>
+                                </div>
+                                <a class="h6 m-0" href="" style="height: 60px;">{{$post->title}}</a>
+                            </div>
+                        </div>
+                        @endforeach  
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -24,10 +24,11 @@
                     {{ config('app.name', 'Laravel') }}
                 </a> -->
                 <a class="navbar-brand p-0" href="{{ url('/') }}">
-                <img src="{{ asset('images/qse.png') }}" width="100" height="60" alt="logo" class="  py-1">
+                <!-- <img src="{{ asset('images/qse.png') }}" width="100" height="60" alt="logo" class="  py-1"> -->
             </a>
             <p class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0"><b>TREND NEWS</b></h2></p>
+                <!-- <h2 class="m-0"><b>TREND NEWS</b></h2> -->
+            </p>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

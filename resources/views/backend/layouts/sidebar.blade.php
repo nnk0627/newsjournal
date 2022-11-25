@@ -35,14 +35,6 @@
                         </p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="{{ url('admin/slider') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Slider
-                        </p>
-                    </a>
-                </li> -->
                 <li class="nav-item">
                     <a href="{{ url('admin/category') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -56,6 +48,14 @@
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             All News
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('admin/video') }}" class="nav-link">
+                        <i class="nav-icon fas fa-video"></i>
+                        <p>
+                            All Videos
                         </p>
                     </a>
                 </li>

@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Post;
 use App\Site;
+use App\Video;
 use App\Slider;
-use App\Category;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+use function PHPUnit\Framework\returnValue;
 
 class PageController extends Controller
 {
@@ -22,8 +25,9 @@ class PageController extends Controller
         $politicsposts = Post::where('category_id','1')->orderBy('id','desc')->paginate(6);
         $businessposts = Post::where('category_id','2')->orderBy('id','desc')->paginate(6);
         $articlesposts = Post::where('category_id','3')->orderBy('id','desc')->paginate(6);
-        $lifestyleposts = Post::where('category_id','4')->orderBy('id','desc')->paginate(6);
-        $weatherposts = Post::where('category_id','5')->orderBy('id','desc')->paginate(6);
+        $interviewsposts = Post::where('category_id','4')->orderBy('id','desc')->paginate(6);
+        $lifestyleposts = Post::where('category_id','5')->orderBy('id','desc')->paginate(6);
+        $weatherposts = Post::where('category_id','6')->orderBy('id','desc')->paginate(6);
 
         $posts = Post::orderby('id', 'asc')->orderby('id', 'asc')->paginate(6);
         $category=Category::find($id);
@@ -31,20 +35,13 @@ class PageController extends Controller
         $slider = Post::where('slideshow',1)->get();
 
         $sites = Site::all();
+        $latestposts= Post::orderBy('created_at', 'desc')->take(4)->get(); 
 
-        // if($request->has('category')){
-        //     $category=Category::find($request->category);
-        //     $posts=$category->posts;
-        // }else{
-        //         $posts= Post::latest()->paginate(15);
-        // } 
         
-        // $posts = Post::latest()->paginate(15);
-        $latestposts= Post::orderBy('created_at', 'desc')->paginate(6); 
-
 
         return view('frontend.index', compact('posts','categories','category','sites','latestposts','slider',
-        'politicsposts','businessposts','articlesposts','lifestyleposts','weatherposts'));
+        'politicsposts','businessposts','articlesposts','interviewsposts',
+        'lifestyleposts','weatherposts'));
 
     }
 
@@ -55,8 +52,9 @@ class PageController extends Controller
 
         $categories=Category::all();
         $sites = Site::all();
-        return view('frontend.show', compact('post','categories','posts','sites'));
-    }
+        return view('frontend.show', compact('post','categories','posts','sites'))
+            ->with('i',(request()->input('page', 1) - 1)*5);
+        }
     
     public function about()
     {
@@ -95,4 +93,33 @@ class PageController extends Controller
         return view('frontend.family', compact('posts','categories','category','sites'));
     }
 
+    public function video()
+    {
+        $posts = Post::orderby('id', 'asc')->paginate(6);
+        $categories=Category::all();
+        $slider = Post::where('slideshow',1)->get();
+        // $slider = Slider::where('status',0)->get();
+        $sites = Site::all();
+        $videos = Video::all();
+        return view('frontend.video',compact('posts','categories','videos','slider','sites'));
+    }
+
+    public function search(Request $request){
+       
+        $categories=Category::all();
+        $slider = Post::where('slideshow',1)->get();
+        // $slider = Slider::where('status',0)->get();
+        $sites = Site::all(); 
+
+        $search = $request->input('search');
+            $posts = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('content', 'LIKE', "%{$search}%")
+            ->get();
+            $posts = Post::where('title','=', $search)->orderby('id', 'asc')->paginate(6);
+            $category=Category::find( $search);
+        // Return the search view with the resluts compacted
+        return view('frontend.search', compact('posts','categories','slider','sites'));
+    }
+    
 }

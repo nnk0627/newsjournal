@@ -9726,7 +9726,7 @@ h6,
                             </div>
                             <div>
                                 <h3 class="mb-3">{{ $post->title }}</h3>
-                                <p>
+                                <p class="">
                                 {!! $post->content !!}
                               </p>
                             </div>

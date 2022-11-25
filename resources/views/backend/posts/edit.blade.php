@@ -16,11 +16,15 @@
                     <label>Title</label>
                     <input type="text" class="form-control" placeholder="Title" name="title" value="{{ $post->title }}">
                 </div>
+                <div class="form-group mb-4">
+                    <label>Title (EN)</label>
+                    <input type="text" class="form-control" placeholder="Title" name="engtitle" value="{{ $post->engtitle }}">
+                </div>
                 <div class="form-group">
-                    <label>Category</label>
-                    <select class="form-control" name="category_id">
-                        <option>Please Select</option>
-                        @foreach($cats as $cat)
+                    <label> Category</label>
+                    <select class="form-control categories" name="category_id[]" multiple="multiple">
+                    <option value="">Please Select Category</option>                   
+                    @foreach($cats as $cat)
                         <option value="{{ $cat->id }}" {{ $cat->id == $post->category_id ? 'selected' : '' }}>
                             {{ $cat->title }}
                         </option>
@@ -35,8 +39,14 @@
                 
                 <div class="form-group mb-4">
                     <label>Description</label>
-                    <textarea class="form-control" rows="6" name="content" id="summernote">
+                    <textarea class="form-control" rows="4" name="content" id="summernote">
                     {!! $post->content !!}
+                    </textarea>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Description(EN)</label>
+                    <textarea class="form-control" rows="4" name="engcontent" id="summernote1">
+                    {!! $post->engcontent !!}
                     </textarea>
                 </div>
                 <div class="form-group">
@@ -50,14 +60,13 @@
                     {{ $post->slideimages }}
                 </div>
                 <div class="form-group mb-4">
-                    <label>SlideShow</label>
-                    <input type="checkbox" name="slideshow" {{$post->status == '1' ? 'checked' : '' }}>0=hidden, 1=visible
-                    </div>
-                <div>
-                <div class="form-group mb-4">
-                    <label>PostShow</label>
-                    <input type="checkbox" name="status" {{$post->status == '1' ? 'checked' : '' }}>0=hidden, 1=visible
-                    </div>
+                    <!-- <label>SlideShow</label> -->
+                    <input type="checkbox" name="slideshow" {{$post->status == '1' ? 'checked' : '' }}>
+                    <span class="mr-10">SlideShow</span>    
+                    <!-- <label>PostShow</label> -->
+                    <input type="checkbox" name="status" {{$post->status == '1' ? 'checked' : '' }}>
+                    <span>PostShow</span>    
+                </div>
                 <div>
                     <button class="btn btn-primary mt-3" type="submit">Update</button>
                     <a href="{{ url('/admin/post') }}" class="btn btn-secondary mt-3">Back</a>
