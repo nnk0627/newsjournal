@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h3 class="heading mb-5">Update Post</h3>
+            <h3 class="heading mb-3">Update Post</h3>
             @include('alerts')
             <form method="post" action="{{ url("admin/post/$post->id/edit") }}" enctype="multipart/form-data">
                 @csrf
@@ -31,21 +31,27 @@
                         @endforeach
                     </select>
                 </div>
+               
                 <div class="form-group mb-4">
                     <label>Date</label>
                     <input type="date" class="form-control" placeholder="" name="date" value="{{ $post->date }}">
                     
                 </div>
-                
+
+                <div class="form-group mb-4">
+                    <label>Tags</label>
+                    <input name="tags"  class="form-control" value="{{ $post->tags }}" autofocus>
+                </div> 
+
                 <div class="form-group mb-4">
                     <label>Description</label>
-                    <textarea class="form-control" rows="4" name="content" id="summernote">
+                    <textarea class="form-control" rows="3" name="content" id="summernote">
                     {!! $post->content !!}
                     </textarea>
                 </div>
                 <div class="form-group mb-4">
                     <label>Description(EN)</label>
-                    <textarea class="form-control" rows="4" name="engcontent" id="summernote1">
+                    <textarea class="form-control" rows="3" name="engcontent" id="summernote1">
                     {!! $post->engcontent !!}
                     </textarea>
                 </div>

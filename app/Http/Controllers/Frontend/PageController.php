@@ -29,18 +29,16 @@ class PageController extends Controller
         $lifestyleposts = Post::where('category_id','5')->orderBy('id','desc')->paginate(6);
         $weatherposts = Post::where('category_id','6')->orderBy('id','desc')->paginate(6);
 
-        $posts = Post::orderby('id', 'asc')->orderby('id', 'asc')->paginate(6);
+        $posts = Post::orderby('id', 'asc')->orderby('id', 'asc')->limit(4)->get();
         $category=Category::find($id);
         
         $slider = Post::where('slideshow',1)->get();
 
         $sites = Site::all();
-        $latestposts= Post::orderBy('created_at', 'desc')->take(4)->get(); 
+        $latestposts= Post::orderBy('created_at', 'desc')->take(4)->get();        
 
-        
-
-        return view('frontend.index', compact('posts','categories','category','sites','latestposts','slider',
-        'politicsposts','businessposts','articlesposts','interviewsposts',
+        return view('frontend.index', compact('posts','categories','category','sites',
+        'latestposts','slider','politicsposts','businessposts','articlesposts','interviewsposts',
         'lifestyleposts','weatherposts'));
 
     }
@@ -108,16 +106,16 @@ class PageController extends Controller
        
         $categories=Category::all();
         $slider = Post::where('slideshow',1)->get();
-        // $slider = Slider::where('status',0)->get();
         $sites = Site::all(); 
 
-        $search = $request->input('search');
-            $posts = Post::query()
-            ->where('title', 'LIKE', "%{$search}%")
-            ->orWhere('content', 'LIKE', "%{$search}%")
-            ->get();
-            $posts = Post::where('title','=', $search)->orderby('id', 'asc')->paginate(6);
-            $category=Category::find( $search);
+        // Check for search input
+        if (request('search')) {
+            $posts = Post::where('title', 'like', '%' . request('search') . '%')->get();
+            
+        } else {
+            $posts = Post::all();
+        }
+           
         // Return the search view with the resluts compacted
         return view('frontend.search', compact('posts','categories','slider','sites'));
     }

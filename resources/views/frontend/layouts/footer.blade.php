@@ -3,7 +3,11 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="mb-2 mt-n2 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
+                @foreach ($sites as $site)            
+                <div class="row">
+                    <h2 class="m-0 display-5 text-uppercase px-2 "><span class="text-primary ">{{ $site->title }}</span></h2>
+                </div>                                                         
+                @endforeach 
                 </a>
                 <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
                 <div class="d-flex justify-content-start mt-4">
@@ -27,13 +31,11 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Tags</h4>
-                <div class="d-flex flex-wrap m-n1">
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Articles</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Weather</a>
-                </div>
+				@foreach($posts as $post)
+					<a href="" class="">
+                        <span class="">{{  $post->tags }}</span>
+                    </a>
+				@endforeach
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Quick Links</h4>

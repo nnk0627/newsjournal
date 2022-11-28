@@ -471,6 +471,7 @@ class ComposerStaticInitea020027f467560e4eea8971b31640a0
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Site' => __DIR__ . '/../..' . '/app/Site.php',
         'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
+        'App\\TagPost' => __DIR__ . '/../..' . '/app/TagPost.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Video' => __DIR__ . '/../..' . '/app/Video.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

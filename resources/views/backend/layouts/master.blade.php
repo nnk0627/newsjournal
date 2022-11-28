@@ -30,9 +30,13 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <!-- tags -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    
     <style>
         h3, h4, h5{
-            font-family: 'Roboto Slab', serif;
+            font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
         }
         .heading{
             border-left:5px solid #007bff;
@@ -108,9 +112,9 @@
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
     $('#summernote,#summernote1').summernote({
-        placeholder: '',
+        placeholder: 'write here...',
         tabsize: 2,
-        height: 500
+        height: 300
       });
 </script>
 
@@ -130,26 +134,32 @@
 <script class="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.js"></script>
-<script>
-   
-   $('#example').dataTable( {
-   
-    "pageLength": 10
-    
+<script>  
+   $('#example').dataTable( {  
+    "pageLength": 10  
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-
 <script>
     $(document).ready(function() {
     $('.categories').select2({
-                placeholder: "Select",
-                allowClear: true
+            placeholder: "Select",
+            allowClear: true
     });
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/@yaireo/tagify"></script>
+  <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
+  <script>
+    // The DOM element you wish to replace with Tagify
+    var input = document.querySelector('input[name=tags]');
 
+    // initialize Tagify on the above input node reference
+    new Tagify(input)
+  </script>
+  
 </body>
 </html>

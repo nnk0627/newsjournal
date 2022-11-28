@@ -1,7 +1,7 @@
 <!-- Topbar Start -->
 <div class="container-fluid">
         <div class="row align-items-center bg-light px-lg-5">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 Button1">
                 <div class="d-flex justify-content-between">
                     <div class="bg-primary text-white text-center py-2" style="width: 100px;">Tranding</div>
                     <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3" style="width: calc(100% - 100px); padding-left: 90px;">
@@ -18,13 +18,19 @@
                 document.getElementById('date-time').innerHTML=dt;
                 </script>
             </div> -->
+            <div class="col-md-4 d-none d-md-block" >
+                <ul>
+                    <li><a href="{{ url('locale/en') }}">{{('messages.english')}}</a></li>
+                    <li><a href="{{ url('locale/my') }}">{{('messages.myanmar')}}</a></li>
+                </ul>
+            </div>
         </div>
         <div class="row align-items-center py-2 px-lg-5">
             <div class="col-lg-8">
                 <a href="" class="navbar-brand d-none d-lg-block">
                 @foreach ($sites as $site)            
                 <div class="row">
-                    <img style="width: 140px;height:60px; margin-left: 15px;" class="rounded" src="{{ asset('images/' . $site->image) }}" alt="">
+                    <img style="width: 120px; height:60px; margin-left: 15px;" class="rounded-circle shadow" src="{{ asset('images/' . $site->image) }}" alt="">
                     <h2 class="m-0 display-5 text-uppercase px-2 "><span class="text-primary ">{{ $site->title }}</span></h2>
                 </div>                                                         
                 @endforeach 
@@ -40,7 +46,11 @@
     <div class="container-fluid p-0 mb-3">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
+                @foreach ($sites as $site)            
+                <div class="row">
+                    <h2 class="m-0 display-5 text-uppercase px-2 "><span class="text-primary ">{{ $site->title }}</span></h2>
+                </div>                                                         
+                @endforeach 
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -48,8 +58,8 @@
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="{{url('/')}}" class="nav-item nav-link active">Home</a>
-                    <a href="{{url('blog')}} " class="nav-item nav-link mx-2"> News</a>
-                    <div class="nav-item dropdown">
+                    <!-- <a href="{{url('blog')}} " class="nav-item nav-link mx-2"> News</a> -->
+                    <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             @foreach($categories as $category)
@@ -57,19 +67,26 @@
                                 {{$category->title}}</a>   
                             @endforeach
                         </div>
-                    </div>
+                    </div> -->
+                    
+                    @foreach($categories as $category)     
+                        <a href="{{route('family',$category->id)}}" class="nav-item nav-link">
+                        {{$category->title}}
+                        </a>
+                        
+                    @endforeach
+                    
+
                     <a href="{{url('contact-us')}}" class="nav-item nav-link">Contact</a>
                     <a href="{{url('video')}}" class="nav-item nav-link">Videos</a>
                     
                     <!-- SEARCH FORM -->
                     <form action="{{ url('search') }}" class="form-inline ml-3 " method="GET">
-                        <div class="input-group input-group-sm mt-2">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                             aria-label="Search" name="Search" value="">
+                        <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
+                            <input type="text" class="form-control" placeholder="Keyword" name="search" >
                             <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                <button class="input-group-text text-secondary" type="submit"><i
+                                        class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>

@@ -8,20 +8,20 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
         
-            <h3 class="heading mb-5">Create New Post</h3>
+            <h3 class="heading mb-3">Create New Post</h3>
             @include('alerts')
             <form method="post" action="{{ url('admin/post') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name='user_id' value="{{ auth()->user()->id }}">
-                <div class="form-group mb-4">
+                <div class="form-group mb-4 ">
                     <label>Title</label>
                     <input type="text" class="form-control" placeholder="Title" name="title" required>
                 </div>
                 <div class="form-group mb-4">
                     <label>Title(EN)</label>
-                    <input type="text" class="form-control" placeholder="Title" name="engtitle" required>
+                    <input type="text" class="form-control" placeholder="English Title" name="engtitle" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-4">
                     <label>Category</label>
                     <select class="form-control categories" name="category_id[]" 
                     id="select2Multiple" multiple="multiple" required>
@@ -31,18 +31,25 @@
                         @endforeach
                     </select>
                 </div>
+                
                 <div class="form-group mb-4">
                     <label>Date</label>
                     <input type="date" class="form-control" placeholder="" name="date" required>
-                </div>
-                
+                </div>  
+
+                <div class="form-group mb-4">
+                    <label>Tags</label>
+                    <input name="tags" placeholder="Press enter or add a comma after each tag" 
+                    class="form-control py-2" autofocus data-role="tagsinput">
+                </div>          
+
                 <div class="form-group mb-4">
                     <label>Description</label>
-                    <textarea class="form-control" rows="4" name="content" id="summernote" required></textarea>
+                    <textarea class="form-control" rows="3" name="content" id="summernote" required></textarea>
                 </div>
                 <div class="form-group mb-4">
                     <label>Description(EN)</label>
-                    <textarea class="form-control" rows="4" name="engcontent" id="summernote1" required></textarea>
+                    <textarea class="form-control" rows="3" name="engcontent" id="summernote1" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Upload News Image</label>

@@ -36,6 +36,8 @@ class PostController extends Controller
         $posts->engcontent = $request->engcontent;
 
         $posts->date = $request->date;
+        $posts->tags = $request->tags;
+
         $posts->category_id =  implode(",", $request->category_id);
         $posts->user_id = auth()->user()->id;
         
@@ -88,6 +90,7 @@ class PostController extends Controller
         $posts->engcontent = $request->engcontent;
 
         $posts->date = $request->date;
+        $posts->tags = $request->tags;
         $posts->category_id = implode(",",$request->category_id);
         $posts->user_id = auth()->user()->id;
 

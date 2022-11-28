@@ -94,4 +94,6 @@ Route::get('video/{id}/edit', 'VideoController@edit');
 Route::post('video/{id}/edit', 'VideoController@update');
 Route::get('video/{id}/delete', 'VideoController@destroy');
 
+//Tags
+Route::get('tag', 'TagsController@index');
 });

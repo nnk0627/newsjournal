@@ -27,6 +27,7 @@
                         <th>Title</th>
                         <th>Title(EN)</th>
                         <th>date</th>
+                        <th>Tags</th>
                         <th>SlideShow</th>
                         <th>PostShow</th>
                         <!-- <th>Created at</th> -->
@@ -45,7 +46,8 @@
 
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->engtitle }}</td>
-                        <td> {{ $post->date }}</td>
+                        <td>{{ $post->date }}</td>
+                        <td>{{ $post->tags }}</td>
                         <td>
                              @if ($post->slideshow == '1')
                                 visible

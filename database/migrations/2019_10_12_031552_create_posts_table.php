@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->longText('engcontent');
             $table->longText('content');
             $table->string('date');
+            $table->string('tags');
             $table->tinyInteger('slideshow')->default('0')->nullable();
             $table->tinyInteger('status')->default('0')->nullable();
             $table->timestamps();

@@ -19,9 +19,9 @@
                                             <span class="px-2 text-white">/</span>
                                             <span class="text-white">{{$post->date}}</span>
                                         </div>
-                                       
+                                       <b>
                                         <a class="h4 m-0 text-white" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
-
+                                        </b>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                         <h3 class="m-0">Categories</h3>
                         <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
                     </div>
-                    @foreach($categories as $category)
+                    <!-- @foreach($categories as $category)
                     <div class="position-relative overflow-hidden mb-2" style="height: 60px; ">
                         
                         <a href="{{route('family',$category->id)}}" class="overlay align-items-center justify-content-center h4 m-0">
@@ -52,7 +52,20 @@
                         
                     </div>
 
-                    @endforeach
+                    @endforeach -->
+                    @foreach ($posts as $post)  
+                        <div class="d-flex mb-2">
+                            <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-2" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 12px;">
+                                    <a href="">{{$post->category->title}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{$post->date}}</span>
+                                </div>
+                                <a class=" m-0" href="{{ url("post/$post->id") }}" style="font-size:11px; color:black">{{$post->title}}</a>
+                            </div>
+                        </div>
+                        @endforeach
                 </div>
             </div>
         </div>

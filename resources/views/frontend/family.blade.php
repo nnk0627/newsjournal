@@ -62,8 +62,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Roboto", sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
+  --font-family-monospace: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
 }
 
 *,
@@ -73,7 +73,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -85,7 +85,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -206,7 +206,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
   font-size: 1em;
 }
 
@@ -393,12 +393,12 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.6rem;
   color: #343a40;
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 @media (max-width: 1200px) {
@@ -408,7 +408,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 @media (max-width: 1200px) {
@@ -418,7 +418,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.75rem;
+  font-size: 1.55rem;
 }
 
 @media (max-width: 1200px) {
@@ -428,7 +428,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 1200px) {
@@ -438,12 +438,13 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
+
 
 .lead {
   font-size: 1.25rem;
@@ -453,7 +454,7 @@ h6, .h6 {
 .display-1 {
   font-size: 6rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.6rem;
 }
 
 @media (max-width: 1200px) {
@@ -465,7 +466,7 @@ h6, .h6 {
 .display-2 {
   font-size: 5.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 @media (max-width: 1200px) {
@@ -477,7 +478,7 @@ h6, .h6 {
 .display-3 {
   font-size: 4.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 @media (max-width: 1200px) {
@@ -489,7 +490,7 @@ h6, .h6 {
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 @media (max-width: 1200px) {
@@ -5598,7 +5599,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5710,7 +5711,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Roboto", sans-serif;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -9172,7 +9173,7 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-family: Padauk, Arial, Verdana, Geneva, Helvetica, sans-serif;
 }
 
 .text-justify {
@@ -9815,17 +9816,16 @@ h6,
                         <div class="bg-light py-2 px-4 mb-3">
                             <h3 class="m-0">Tranding</h3>
                         </div>
-                        @foreach ($posts as $post)
-                            
-                        <div class="d-flex mb-3">
+                        @foreach ($posts as $post)  
+                        <div class="d-flex mb-2">
                             <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-2" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 12px;">
                                     <a href="">{{$post->category->title}}</a>
                                     <span class="px-1">/</span>
                                     <span>{{$post->date}}</span>
                                 </div>
-                                <a class="h6 m-0" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                                <a class=" m-0" href="{{ url("post/$post->id") }}" style="font-size:11px; color:black">{{$post->title}}</a>
                             </div>
                         </div>
                         @endforeach

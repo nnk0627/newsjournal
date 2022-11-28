@@ -47,6 +47,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Site' => $baseDir . '/app/Site.php',
     'App\\Slider' => $baseDir . '/app/Slider.php',
+    'App\\TagPost' => $baseDir . '/app/TagPost.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Video' => $baseDir . '/app/Video.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

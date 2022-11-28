@@ -18,7 +18,7 @@
                             <span class="px-1 text-white">/</span>
                             <a class="text-white" href="">{{$post->date}}</a>
                         </div>
-                        <a class="h m-0 text-white" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                        <a class="h5 m-0 text-white" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
                     </div>
                 </div>
                 @endforeach
@@ -368,21 +368,19 @@
                         <div class="bg-light py-2 px-4 mb-3">
                             <h3 class="m-0">Tranding</h3>
                         </div>
-                        @foreach ($posts as $post)
-                            
-                        <div class="d-flex mb-3">
+                        @foreach ($posts as $post)  
+                        <div class="d-flex mb-2">
                             <img src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-2" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 12px;">
                                     <a href="">{{$post->category->title}}</a>
                                     <span class="px-1">/</span>
                                     <span>{{$post->date}}</span>
                                 </div>
-                                <a class="h6 m-0" href="{{ url("post/$post->id") }}">{{$post->title}}</a>
+                                <a class=" m-0" href="{{ url("post/$post->id") }}" style="font-size:11px; color:black">{{$post->title}}</a>
                             </div>
                         </div>
                         @endforeach
-
                     </div>
                     <!-- Popular News End -->
 
