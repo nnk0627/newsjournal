@@ -7,9 +7,9 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ url('/') }}" class="nav-link">Home</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
+        <!-- <li class="nav-item d-none d-sm-inline-block">
             <a href="{{url('contact-us')}}" class="nav-link">Contact</a>
-        </li>
+        </li> -->
     </ul>
 
     <!-- SEARCH FORM -->
@@ -32,7 +32,7 @@
             </a>
         </li> -->
         <li class="nav-item">
-            <a class="nav-link"  data-slide="true" href="{{ 'logout' }}">
+            <a class="nav-link"  data-slide="true" href="{{ url('home') }}">
                 <!-- <i class="fas fa-user-circle mr-2"></i> -->Logout
             </a>
         </li>  

@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Categories</h3>
-                        <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                        <h3 class="m-0">@lang('auth.category')</h3>
+                        <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">@lang('auth.viewll')</a>
                     </div>
                     <!-- @foreach($categories as $category)
                     <div class="position-relative overflow-hidden mb-2" style="height: 60px; ">

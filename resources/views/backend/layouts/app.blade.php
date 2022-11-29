@@ -40,7 +40,7 @@
                     <ul class="navbar-nav ml-auto">
                         @if(auth()->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin') }}">Admin Dashboard</a>
+                                <a class="nav-link" href="{{ url('admin') }}" >Admin Dashboard</a>
                             </li>
                         @endif
                         <!-- Authentication Links -->

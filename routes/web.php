@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Auth::routes();
 
+//  Route::get('/', 'Frontend\PageController@index');
+Route::group(['prefix' => '{locale}'], function() {
+    Route::get('/', function () {
+        return view('welcome');
+    })->middleware('setLocale');  
+});
 Auth::routes();
 
 Route::get('/', 'Frontend\PageController@index');
@@ -31,6 +38,7 @@ Route::get('search', 'Frontend\PageController@search')->name('search');
 // Route::put('index/family/{id}', 'Frontend\PageController@family');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('logout', 'Auth\LoginController@logout');
 
 

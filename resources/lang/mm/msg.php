@@ -1,0 +1,17 @@
+<?php
+ return[
+    'home'=>"ပင်မစာမျက်နှာ",
+    'politics'=>"နိုင်ငံရေး",
+    'business'=>"ကုန်သွယ်စီးပွား",
+    'articles'=>"ဆောင်းပါး",
+    'interviews'=>"တွေ့ဆုံမေးမြန်းခန်း",
+    'lifestyle'=>"LifeStyle",
+    'weather'=>"Weather",
+    'contact'=>"ဆက်သွယ်ရန်",
+    'videos'=>"ဗီဒီယိုများ",
+    'viewll'=>"အားလုံးကြည့်ရန်",
+    'tags'=>"ဆက်စပ်အကြောင်းအရာများ",
+    'keyword'=>"ရှာဖွေရန်",
+    'category'=>"ကဏ္ဍများ",
+ ]
+ ?>

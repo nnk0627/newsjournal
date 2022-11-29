@@ -11,6 +11,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- <div class="col-md-4 text-right d-none d-md-block" style="font-size: 14px;">
                 <span id="date-time"> </span>
                 <script>
@@ -18,12 +19,9 @@
                 document.getElementById('date-time').innerHTML=dt;
                 </script>
             </div> -->
-            <div class="col-md-4 d-none d-md-block" >
-                <ul>
-                    <li><a href="{{ url('locale/en') }}">{{('messages.english')}}</a></li>
-                    <li><a href="{{ url('locale/my') }}">{{('messages.myanmar')}}</a></li>
-                </ul>
-            </div>
+          
+            
+                
         </div>
         <div class="row align-items-center py-2 px-lg-5">
             <div class="col-lg-8">
@@ -57,7 +55,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="{{url('/')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url('/')}}" class="nav-item nav-link active">@lang('auth.home')</a>
                     <!-- <a href="{{url('blog')}} " class="nav-item nav-link mx-2"> News</a> -->
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
@@ -77,8 +75,8 @@
                     @endforeach
                     
 
-                    <a href="{{url('contact-us')}}" class="nav-item nav-link">Contact</a>
-                    <a href="{{url('video')}}" class="nav-item nav-link">Videos</a>
+                    <a href="{{url('contact-us')}}" class="nav-item nav-link">@lang('auth.contact')
+                    <a href="{{url('video')}}" class="nav-item nav-link">@lang('auth.videos')</a>
                     
                     <!-- SEARCH FORM -->
                     <form action="{{ url('search') }}" class="form-inline ml-3 " method="GET">
@@ -91,7 +89,16 @@
                         </div>
                     </form>
                 </div>
-            </div
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ app()->getLocale() == 'en'? 'English' : 'Myanmar'}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{ url(app()->getLocale() == 'en' ? 'mm':'en')}}">{{ app()->getLocale() == 'en' ? 'Myanmar':'English'}}</a></a>
+                </div>
+            </div>
+
         </nav>
     </div>
     <!-- Navbar End -->

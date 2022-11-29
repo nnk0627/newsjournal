@@ -9711,8 +9711,8 @@ h6,
     <div class="container-fluid">
         <div class="container">
             <nav class="breadcrumb bg-transparent m-0 p-0">
-                <a class="breadcrumb-item" href="{{url('/')}}">Home</a>
-                <a class="breadcrumb-item" href="{{url('blog')}}">Category</a>
+                <a class="breadcrumb-item" href="{{url('/')}}">@lang('auth.home')</a>
+                <a class="breadcrumb-item" href="{{url('blog')}}">@lang('auth.category')</a>
                 <span class="breadcrumb-item active">{{$category->title}}</span>
             </nav>
         </div>
@@ -9728,8 +9728,8 @@ h6,
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">{{$category->title}}</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                                <h4 class="m-0">{{$category->title}}</h4>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">@lang('auth.viewll')</a>
                             </div>
                         </div>
                         @foreach($posts as $post)
@@ -9779,7 +9779,7 @@ h6,
                     <!-- Social Follow Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Follow Us</h3>
+                            <h4 class="m-0">Follow Us</h4>
                         </div>
                         <div class="d-flex mb-3">
                             <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #39569E;">
@@ -9814,7 +9814,7 @@ h6,
                     <!-- Popular News Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tranding</h3>
+                            <h4 class="m-0">Tranding</h4>
                         </div>
                         @foreach ($posts as $post)  
                         <div class="d-flex mb-2">
@@ -9835,7 +9835,7 @@ h6,
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h4 class="m-0">@lang('auth.tags')</h4>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                             <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>

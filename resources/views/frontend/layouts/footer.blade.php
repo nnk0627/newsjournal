@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Categories</h4>
+                <h4 class="font-weight-bold mb-4">@lang('auth.category')</h4>
                 <div class="d-flex flex-wrap m-n1">
                     
                     @foreach($categories as $category)
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Tags</h4>
+                <h4 class="font-weight-bold mb-4">@lang('auth.tags')</h4>
 				@foreach($posts as $post)
 					<a href="" class="">
                         <span class="">{{  $post->tags }}</span>

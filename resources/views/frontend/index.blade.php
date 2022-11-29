@@ -5,8 +5,8 @@
 <div class="container-fluid py-3">
         <div class="container">
             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Featured</h3>
-                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                <h4 class="m-0">Featured</h4>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">@lang('auth.viewll')</a>
             </div>
             <div class="owl-carousel owl-carousel-2 carousel-item-4 position-relative">
                 @foreach($posts as $post)
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Politics</h3>
+                        <h4 class="m-0">@lang('auth.politics')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($politicsposts as $post)
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Business</h3>
+                        <h4 class="m-0">@lang('auth.business')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($businessposts as $post)
@@ -82,7 +82,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Articles</h3>
+                        <h4 class="m-0">@lang('auth.articles')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($articlesposts as $post)
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">LifeStyle</h3>
+                        <h4 class="m-0">@lang('auth.lifestyle')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                         @foreach($lifestyleposts as $post)
@@ -128,7 +128,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Weather</h3>
+                        <h4 class="m-0">@lang('auth.weather')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($weatherposts as $post)
@@ -148,7 +148,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Interviews</h3>
+                        <h4 class="m-0">@lang('auth.interviews')</h4>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                         @foreach($interviewsposts as $post)
@@ -180,8 +180,8 @@
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">Popular</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                                <h4 class="m-0">Popular</h4>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">@lang('auth.viewll')</a>
                             </div>
                         </div>
                         @foreach ($posts as $post)
@@ -252,8 +252,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">Latest</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                                <h4 class="m-0">Latest</h4>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">@lang('auth.viewll')</a>
                             </div>
                         </div>
                         @foreach ($latestposts as $post)
@@ -387,7 +387,7 @@
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h4 class="m-0">@lang('auth.tags')</h4>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                         <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
